@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
-const Game = () => {
+import PlayArea from './PlayArea';
+const Game = (props) => {
 
   const [pokemonCollection, setPokemonCollection] = useState([]);
   const POKEMON_COLLLECTION_STRING = 'pokemonCollection';
@@ -78,8 +78,7 @@ const Game = () => {
 
   return (
     <div>
-      <div>{pokemonCollection[0].name}</div>
-      <div>{pokemonCollection.forEach(p => <div>{p.name}</div>)}</div>
+      <PlayArea pokemonCollection={pokemonCollection} />
     </div>
   )
 }
